@@ -1,0 +1,69 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <div class="app flex-center">
+        <div class="app-card">
+            <header class="flex-center">
+                <template lwc:if={response}>
+                    <img
+                        src={arrowBackIcon}
+                        onclick={backHandler}
+                        class="slds-var-m-right_medium cusrsor"
+                    />
+                </template>
+
+                <h1>Weather App</h1>
+            </header>
+            <template if:true={loadingText}>
+                <div class={loadingClasses}>{loadingText}</div>
+            </template>
+            <template lwc:if={response}>
+                <section class="slds-m-around_large text-center">
+                    <img src={weatherIcon} class="weather-image" />
+                    <div class="temperature">
+                        <span>{response.temperature}</span>
+                        <span>°</span>C
+                    </div>
+                    <div class="description">{response.description}</div>
+                    <div class="location">
+                        <img src={mapIcon} />
+                        <span>{response.location}</span>
+                    </div>
+                </section>
+
+                <footer>
+                    <div class="feels_like">
+                        <div>
+                            <img src={thermometerIcon} />
+                            <div>{response.feels_like}°C</div>
+                            <p>Feels like</p>
+                        </div>
+                    </div>
+                    <div class="humidity">
+                        <div>
+                            <img src={dropletIcon} />
+                            <div>{response.humidity}</div>
+                        </div>
+                        <p>Humidity</p>
+                    </div>
+                </footer>
+            </template>
+            <template lwc:else>
+                <section class="slds-m-around_large">
+                    <form onsubmit={submitHandler}>
+                        <input
+                            type="text"
+                            class="width100"
+                            placeholder="Enter city name"
+                            required
+                            spellcheck="false"
+                            onkeyup={searchHandler}
+                        />
+                        <button type="submit" class="slds-m-top_large">
+                            Search
+                        </button>
+                    </form>
+                </section>
+            </template>
+        </div>
+    </div>
+</template>

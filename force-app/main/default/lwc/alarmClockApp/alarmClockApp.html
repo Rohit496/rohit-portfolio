@@ -1,0 +1,62 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <div class="alarm-card">
+        <h1>Alarm Clock</h1>
+        <img
+            src={clockImage}
+            alt="Alarm Clock"
+            height="200px"
+            width="200px"
+            class={shakeImage}
+        />
+        <h2>{currentTime}</h2>
+        <template lwc:if={alarmSetMessage}>
+            <div class="alarm-message-container">
+                <div class="slds-badge alarm-message">{alarmSetMessage}</div>
+            </div>
+        </template>
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col">
+                <c-clock-drop-down
+                    label="Hour(s)"
+                    options={hours}
+                    unique-id="select-hour"
+                    onoptionhandler={optionHandler}
+                ></c-clock-drop-down>
+            </div>
+            <div class="slds-col">
+                <c-clock-drop-down
+                    label="Minute(s)"
+                    options={minutes}
+                    unique-id="select-minute"
+                    onoptionhandler={optionHandler}
+                ></c-clock-drop-down>
+            </div>
+            <div class="slds-col">
+                <c-clock-drop-down
+                    label="AM/PM"
+                    options={meridiem}
+                    unique-id="select-am-pm"
+                    onoptionhandler={optionHandler}
+                ></c-clock-drop-down>
+            </div>
+        </div>
+        <template lwc:if={isAlarmSet}>
+            <button
+                class="slds-button slds-button_neutral slds-button_stretch"
+                onclick={clearAlarmHandler}
+            >
+                Clear Alarm
+            </button>
+        </template>
+        <template lwc:else>
+            <button
+                class="slds-button slds-button_neutral slds-button_stretch"
+                disabled={isFieldSelected}
+                onclick={setAlarmHandler}
+            >
+                Set Alarm
+            </button>
+        </template>
+    </div>
+</template>

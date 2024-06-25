@@ -1,0 +1,9 @@
+.info-container {
+    display: flex; /* Use flex to align items */
+    align-items: center; /* Center align items vertically */
+    gap: 5px; /* Adjust gap to control space between text and icon */
+}
+
+.info-text {
+    margin-right: 5px; /* Smaller margin to bring text closer to icon */
+}

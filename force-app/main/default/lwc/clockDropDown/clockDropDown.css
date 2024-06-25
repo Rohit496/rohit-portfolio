@@ -1,0 +1,12 @@
+:host() {
+    --background-color: #243356;
+    --accent-color: #00d9fe;
+}
+
+.custom-label {
+    color: var(--accent-color);
+}
+
+.custom-select {
+    color: var(--background-color);
+}

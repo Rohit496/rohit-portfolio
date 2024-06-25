@@ -1,0 +1,42 @@
+.tooltip-container {
+    position: relative;
+    display: inline-block; /* Align items in a single line */
+    cursor: pointer;
+}
+
+.icon-tooltip-wrapper {
+    position: relative; /* Ensure tooltip is positioned relative to this container */
+}
+
+.tooltip {
+    visibility: hidden; /* Start hidden */
+    background-color: #003366; /* Dark blue background */
+    color: #ffffff; /* White text color */
+    text-align: left;
+    border-radius: 6px;
+    padding: 10px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Position the tooltip above the icon */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    width: 240px; /* Adjust the width as needed */
+}
+
+.tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%; /* Position the arrow at the bottom of the tooltip */
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: #003366 transparent transparent transparent; /* Dark blue arrow */
+}
+
+.tooltip-container:hover .tooltip {
+    visibility: visible; /* Show tooltip on hover */
+    opacity: 1;
+}

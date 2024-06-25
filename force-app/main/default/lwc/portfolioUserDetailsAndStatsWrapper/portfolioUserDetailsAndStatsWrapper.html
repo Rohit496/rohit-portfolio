@@ -1,0 +1,15 @@
+<template>
+    <div class="userDetailsAndStatsWrapper">
+        <lightning-layout multiple-rows>
+            <lightning-layout-item size="12">
+                <c-portfolio-user-details
+                    record-id={recordId}
+                    object-api-name={objectApiName}
+                ></c-portfolio-user-details>
+            </lightning-layout-item>
+            <lightning-layout-item size="12">
+                <c-portfolio-user-stats></c-portfolio-user-stats>
+            </lightning-layout-item>
+        </lightning-layout>
+    </div>
+</template>

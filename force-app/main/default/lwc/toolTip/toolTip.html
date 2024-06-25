@@ -1,0 +1,12 @@
+<template>
+    <div class="tooltip-container">
+        <lightning-icon
+            icon-name="utility:info"
+            size="xx-small"
+            alternative-text="Info"
+            onmouseover={showTooltip}
+            onmouseout={hideTooltip}
+        ></lightning-icon>
+        <div class="tooltip" if:true={isTooltipVisible}>{tooltipText}</div>
+    </div>
+</template>
