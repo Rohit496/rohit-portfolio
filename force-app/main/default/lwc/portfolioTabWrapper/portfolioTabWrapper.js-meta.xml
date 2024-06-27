@@ -14,22 +14,6 @@
             <property name="objectApiName"
                       type="String"
                       label="Object API Name" />
-            <property name="resumeUrl"
-                      type="String"
-                      label="Resume Link" />
-            <property name="badges"
-                      type="String"
-                      label="Badges" />
-            <property name="points"
-                      type="String"
-                      label="Points" />
-            <property name="trails"
-                      type="String"
-                      label="Trails" />
-            <property name="rank"
-                      type="String"
-                      label="Rank"
-                      datasource="Ranger, Scout, hiker, Explorer, All star ranger " />
         </targetConfig>
     </targetConfigs>
 </LightningComponentBundle>

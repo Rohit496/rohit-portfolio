@@ -1,0 +1,28 @@
+img {
+    height: 60px;
+    margin-right: 16px;
+}
+
+.cert-box {
+    padding: 12px;
+    font-size: 20px;
+    border-radius: 5px;
+    background: #ffdf7d;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin-top: -18px;
+}
+.cert-box:hover {
+    background: #d8d8d8;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+h2 {
+    background: #16325c;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-size: 18px;
+}
